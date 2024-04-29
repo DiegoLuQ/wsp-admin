@@ -9,9 +9,11 @@ from fastapi import HTTPException
 from html2image import Html2Image
 from PIL import Image
 from io import BytesIO
+from html2image import ChromeBrowser
 
+chrome_browser = ChromeBrowser(executable_path='/usr/bin/google-chrome-stable')
 app = FastAPI()
-os.environ['CHROME_EXECUTABLE'] = '/usr/bin/google-chrome-stable'
+
 
 async def create_plotly_ejem():
     # Crear el DataFrame
@@ -111,7 +113,9 @@ async def generate_image_from_html(html_file, output_file, width=None, height=No
         width (int, optional): Ancho de la imagen. Por defecto es None.
         height (int, optional): Alto de la imagen. Por defecto es None.
     """
-    hti = Html2Image()
+    hti = Html2Image(custom_flags=['--no-sandbox'])
+    hti.browser = "/usr/bin/google-chrome-stable"
+    
     with open(html_file, encoding='utf-8') as f:
         html_content = f.read()
     hti.screenshot(html_str=html_content, save_as=output_file, size=(width, height))
