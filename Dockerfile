@@ -8,7 +8,6 @@ WORKDIR /app
 COPY ./app/requirements.txt ./app/requirements.txt
 
 COPY ./app /app/
-EXPOSE 95
 # Instala las dependencias de Python
 RUN pip install --no-cache-dir --upgrade -r ./app/requirements.txt
 

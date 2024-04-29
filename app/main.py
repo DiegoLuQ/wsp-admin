@@ -41,6 +41,11 @@ async def generate_image():
     
     return {"message": "Imagen generada correctamente"}
 
+@app.get("/")
+async def home():
+    
+    return {"message": "Conectado"}
+ 
 @app.get("/download_image")
 async def download_image():
     try:
