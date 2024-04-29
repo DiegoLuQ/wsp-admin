@@ -9,9 +9,7 @@ from fastapi import HTTPException
 from html2image import Html2Image
 from PIL import Image
 from io import BytesIO
-from html2image import ChromeBrowser
 
-chrome_browser = ChromeBrowser(executable_path='/usr/bin/google-chrome-stable')
 app = FastAPI()
 
 
