@@ -17,8 +17,8 @@ services:
 
   nginx:
     image: nginx:latest
-    ports:
-      - "1819:80"
+    # ports:
+    #   - "1819:80"
     environment:
       - VIRTUAL_PORT=80
       - VIRTUAL_HOST=wsp-admim.diego-luque.com
