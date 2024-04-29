@@ -14,7 +14,7 @@ services:
     image: nginx:latest
     environment:
       - VIRTUAL_PORT=80
-      - VIRTUAL_HOST=wsp-admim.diego-luque.com
+      - VIRTUAL_HOST=wsp-admin.diego-luque.com
       - LETSENCRYPT_HOST=wsp-admin.diego-luque.com
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
