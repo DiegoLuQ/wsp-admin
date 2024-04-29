@@ -1,14 +1,17 @@
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+import os 
+
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, Response
 from fastapi import HTTPException
-import pandas as pd
-import plotly.express as px
 from html2image import Html2Image
-import plotly.graph_objects as go
 from PIL import Image
-
 from io import BytesIO
+
 app = FastAPI()
+os.environ['CHROME_EXECUTABLE'] = '/usr/bin/google-chrome-stable'
 
 async def create_plotly_ejem():
     # Crear el DataFrame
