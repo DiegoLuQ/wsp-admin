@@ -1,0 +1,32 @@
+<!-- <!DOCTYPE html>
+<html>
+   <head>
+      <title>Display PDF file</title>
+   </head>
+   <body>
+      <h1>Display PDF file</h1>
+      <embed src="data:application/pdf;base64,{{ pdfFile | safe }}" width="800" height="600">
+   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Display PDF file</title>
+   </head>
+   <body>
+      <h1>Display PDF file</h1>
+      <button onclick="displayPDF()">Display PDF file</button>
+      <div id="container"></div>
+      <script>  
+         function displayPDF() {
+            var embedObj = document.createElement("embed");
+            var container = document.getElementById('container');
+            embedObj.src = "data:application/pdf;base64,{{ pdfFile | safe }}";
+            embedObj.width = 800;
+            embedObj.height = 600;
+            container.append(embedObj);
+         }
+      </script>
+   </body>
+</html>
