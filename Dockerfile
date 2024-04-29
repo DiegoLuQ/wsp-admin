@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y wget \
     && mkdir -p /opt/google/chrome \
     && dpkg -x ./google-chrome-stable_current_amd64.deb /opt/google/chrome \
     && rm ./google-chrome-stable_current_amd64.deb \
-    && apt-get install -y libglib2.0-0 libnss3 \
+    && apt-get install -y libglib2.0-0 libnss3 libdbus-1-3 \
     && apt-get clean
 
 # Agregar la ruta del ejecutable de Chrome al PATH
