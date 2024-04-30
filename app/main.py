@@ -46,7 +46,7 @@ async def generate_image():
 @app.get("/")
 async def home():
     
-    return {"message": "Conectado"}
+    return {"message": "Conectado 2dock"}
  
 @app.get("/download_image")
 async def download_image():
@@ -110,9 +110,9 @@ async def generate_image_from_html(html_file, output_file, width=None, height=No
         width (int, optional): Ancho de la imagen. Por defecto es None.
         height (int, optional): Alto de la imagen. Por defecto es None.
     """
-    hti = Html2Image()
-    # hti = Html2Image(custom_flags=['--no-sandbox'])
-    # hti.browser = "/usr/bin/google-chrome-stable"
+    # hti = Html2Image()
+    hti = Html2Image(custom_flags=['--no-sandbox'])
+    hti.browser = "/usr/bin/google-chrome-stable"
     with open(html_file, encoding='utf-8') as f:
         html_content = f.read()
     hti.screenshot(html_str=html_content, save_as=output_file, size=(width, height))
