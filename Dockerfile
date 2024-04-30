@@ -45,3 +45,4 @@ RUN apt-get update && apt-get install -y wget \
 
 # Agregar la ruta del ejecutable de Chrome al PATH
 ENV PATH="/opt/google/chrome/opt/google/chrome:${PATH}"
+ENV CHROME_NO_SANDBOX=1
