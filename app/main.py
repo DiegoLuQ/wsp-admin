@@ -111,7 +111,7 @@ async def generate_image_from_html(html_file, output_file, width=None, height=No
         height (int, optional): Alto de la imagen. Por defecto es None.
     """
     # hti = Html2Image()
-    hti = Html2Image()
+    hti = Html2Image(custom_flags=['--no-sandbox'])
     with open(html_file, encoding='utf-8') as f:
         html_content = f.read()
     hti.screenshot(html_str=html_content, save_as=output_file, size=(width, height))
