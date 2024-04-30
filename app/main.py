@@ -115,7 +115,7 @@ async def generate_image_from_html(html_file, output_file, width=None, height=No
     hti.browser = "/usr/bin/google-chrome-stable"
     with open(html_file, encoding='utf-8') as f:
         html_content = f.read()
-    hti.screenshot(html_str=html_content, save_as=output_file, size=(width, height))
+    await hti.screenshot(html_str=html_content, save_as=output_file, size=(width, height))
 
 
 if __name__ == "__main__":
